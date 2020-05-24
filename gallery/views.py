@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import datetime as dt
-from .models import Image,Location,Category
+from . models import Image,Location,Category
 
 
 def image(request,image_id):
