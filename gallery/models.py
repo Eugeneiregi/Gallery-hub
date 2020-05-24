@@ -36,6 +36,22 @@ class Image(models.Model):
         return image  
 
 
+class Category(models.Model):
+  types = models.CharField(max_length =100,null=True )
+  def __str__(self):
+    return self.types
+
+  def save_category(self):
+        self.save()
+
+  def category_update(self, types):
+               self.update(cat1 = food)
+
+
+class Location(models.Model):
+  name = models.CharField(max_length =100,null=True)
+
+
   @classmethod
   def todays_images(cls):
         today = dt.date.today()
