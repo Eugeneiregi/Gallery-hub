@@ -32,8 +32,8 @@ class Image(models.Model):
         self.update(Name='picnow')
 
 
-@classmethod
-   def search_by_Name(cls, search_term):
+    @classmethod
+    def search_by_Name(cls, search_term):
         images = cls.objects.filter(Name__icontains=search_term)
         return images
 
