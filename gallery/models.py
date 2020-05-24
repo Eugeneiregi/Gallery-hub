@@ -3,6 +3,16 @@ from django.db import models
 
 import datetime as dt
 
+
+  def save_location(self):
+        self.save()
+  def location_update(self, cat1):
+               self.update(name = Singapore)
+
+  
+  def __str__(self):
+    return self.name
+
 class Image(models.Model):
   Name = models.CharField(max_length = 40,null=True)
   Description = models.TextField()
