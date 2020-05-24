@@ -1,0 +1,9 @@
+{% load bootstrap3 %}
+{% include "navbar.html"%}
+<h1 class="text-center">Welcome to Perry world</h1>
+  <p>Adventure is my second name</p>
+
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+{% endblock %}
