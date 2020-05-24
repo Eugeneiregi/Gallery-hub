@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from datetime as dt
+import datetime as dt
 
 
 def home(request):
