@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Gallery.urls'
+ROOT_URLCONF = 'Iregi.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Gallery.wsgi.application'
+WSGI_APPLICATION = 'Iregi.wsgi.application'
 
 
 # Database
