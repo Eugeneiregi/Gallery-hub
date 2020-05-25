@@ -8,16 +8,16 @@ def image(request,image_id):
         image = Image.objects.get(id = image_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,"All images/photo.html", {"image":image})
+    return render(request,"all-images/photo.html", {"image":image})
 
 
-def home(request):
-    return render(request,'home.html')
+# def home(request):
+#     return render(request,'home.html')
 
 def images_of_day(request):
     date = dt.date.today()
     images = Image.todays_images()
-    return render(request, 'All images/todays-images.html', {"date": date,"images":images})
+    return render(request, 'all-images/todays-images.html', {"date": date,"images":images})
 
 
 def past_days_images(request, past_date):
@@ -35,7 +35,7 @@ def past_days_images(request, past_date):
         return redirect(images_of_day)
     images= Image.todays_images(date)
 
-    return render(request, 'All images/past-images.html', {"date": date,"images":images})
+    return render(request, 'all-images/past-images.html', {"date": date,"images":images})
 def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
@@ -43,11 +43,11 @@ def search_results(request):
         searched_images = Image.search_by_Name(search_term)
         message = f"{search_term}"
 
-        return render(request, 'All images/search.html',{"message":message,"images": searched_images})
+        return render(request, 'all-images/search.html',{"message":message,"images": searched_images})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'All images/search.html',{"message":message})
+        return render(request, 'all-images/search.html',{"message":message})
 
 
 

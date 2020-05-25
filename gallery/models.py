@@ -11,7 +11,7 @@ class Location(models.Model):
         self.save()
 
     def location_update(self, cat1):
-        self.update(name=Singapore)
+        self.update(name=Kenya)
 
     def __str__(self):
         return self.name
@@ -30,6 +30,12 @@ class Image(models.Model):
 
     def image_update(self, picnow):
         self.update(Name='picnow')
+
+    @classmethod
+    def todays_images(cls):
+        today = dt.date.today()
+        images = cls.objects.all()
+        return images
 
 
     @classmethod
@@ -57,12 +63,6 @@ class Category(models.Model):
         self.update(cat1=food)
 
     @classmethod
-    def todays_images(cls):
-        today = dt.date.today()
-        images = cls.objects.all()
-        return images
-
-    @classmethod
     def days_images(cls, date):
         images = cls.objects.filter(pub_date__date=date)
         return images
@@ -71,4 +71,5 @@ class Category(models.Model):
         return self.Name
 
 
-# Create your models here.
+class Test(models.Model):
+    test_name = models.CharField(max_length = 30)
