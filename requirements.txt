@@ -17,7 +17,7 @@ django-bootstrap3==12.1.0
 django-bootstrap4==0.0.6
 django-friendship==1.8.0
 django-heroku==0.3.1
-django-registration==2.4.1
+django-registration==3.1.2
 django-tinymce==2.7.0
 gunicorn==19.9.0
 httplib2==0.18.0
